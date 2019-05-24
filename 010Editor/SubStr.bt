@@ -1,0 +1,15 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+local char a[0x100];
+Memset(a, 'A', sizeof(a));
+SubStr(a, 0x99, 0x7fffffff);
