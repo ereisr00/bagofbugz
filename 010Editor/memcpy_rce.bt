@@ -1,6 +1,8 @@
 #define SZ 0x100
 #define SZ_2 0x08
 
+// CVE-2019-12551
+
 local int i = 0;
 local char p[60];
 

