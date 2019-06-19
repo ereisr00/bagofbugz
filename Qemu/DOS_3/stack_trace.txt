@@ -1,0 +1,17 @@
+Thread 1 "qemu-x86_64" received signal SIGABRT, Aborted.
+0x00007ffff77a282f in raise () from /usr/lib/libc.so.6
+(gdb) bt
+#0  0x00007ffff77a282f in raise () from /usr/lib/libc.so.6
+#1  0x00007ffff778d672 in abort () from /usr/lib/libc.so.6
+#2  0x00007ffff778d548 in __assert_fail_base.cold.0 () from /usr/lib/libc.so.6
+#3  0x00007ffff779adb6 in __assert_fail () from /usr/lib/libc.so.6
+#4  0x00005555555cceef in tcg_temp_alloc (s=0x555555a1aba0 <tcg_init_ctx>) at /opt/qemu/trunk/src/qemu-4.0.0/tcg/tcg.c:1106
+#5  0x00005555555cd30a in tcg_temp_new_internal (type=TCG_TYPE_I32, temp_local=false) at /opt/qemu/trunk/src/qemu-4.0.0/tcg/tcg.c:1223
+#6  0x00005555555c4dba in tcg_temp_new_i32 () at /opt/qemu/trunk/src/qemu-4.0.0/tcg/tcg.h:958
+#7  0x00005555555cd60c in tcg_const_i32 (val=7) at /opt/qemu/trunk/src/qemu-4.0.0/tcg/tcg.c:1310
+#8  0x0000555555684020 in disas_insn (s=0x7fffffffdc50, cpu=0x555557a65a60) at /opt/qemu/trunk/src/qemu-4.0.0/target/i386/translate.c:6225
+#9  0x000055555568c95b in i386_tr_translate_insn (dcbase=0x7fffffffdc50, cpu=0x555557a65a60) at /opt/qemu/trunk/src/qemu-4.0.0/target/i386/translate.c:8535
+#10 0x00005555556185d9 in translator_loop (ops=0x5555559a5b40 <i386_tr_ops>, db=0x7fffffffdc50, cpu=0x555557a65a60, tb=0x555555a35040 <static_code_gen_buffer+2944>)
+    at /opt/qemu/trunk/src/qemu-4.0.0/accel/tcg/translator.c:107
+#11 0x000055555568cb1e in gen_intermediate_code (cpu=0x555557a65a60, tb=0x555555a35040 <static_code_gen_buffer+2944>) at /opt/qemu/trunk/src/qemu-4.0.0/target/i386/translate.c:8597
+#12 0x00005555556167b3 in tb_gen_code (cpu=0x555557a65a60, pc=274886463488, cs_base=0, flags=4243635, cflags=-16777216) at /opt/qemu/trunk/src/qemu-4.0.0/accel/tcg/translate-all.c:1723

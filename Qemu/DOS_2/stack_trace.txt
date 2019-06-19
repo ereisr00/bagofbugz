@@ -1,0 +1,11 @@
+Thread 1 "qemu-x86_64" received signal SIGABRT, Aborted.
+0x00007ffff77a282f in raise () from /usr/lib/libc.so.6
+(gdb) bt
+#0  0x00007ffff77a282f in raise () from /usr/lib/libc.so.6
+#1  0x00007ffff778d672 in abort () from /usr/lib/libc.so.6
+#2  0x00005555555d16ee in temp_load (s=0x555555a1aba0 <tcg_init_ctx>, ts=0x555555a1b770 <tcg_init_ctx+3024>, desired_regs=65343, allocated_regs=48, preferred_regs=0)
+    at /opt/qemu/trunk/src/qemu-4.0.0/tcg/tcg.c:3211
+#3  0x00005555555d21c3 in tcg_reg_alloc_op (s=0x555555a1aba0 <tcg_init_ctx>, op=0x555557a92680) at /opt/qemu/trunk/src/qemu-4.0.0/tcg/tcg.c:3458
+#4  0x00005555555d33a4 in tcg_gen_code (s=0x555555a1aba0 <tcg_init_ctx>, tb=0x555555a35040 <static_code_gen_buffer+2944>) at /opt/qemu/trunk/src/qemu-4.0.0/tcg/tcg.c:3981
+#5  0x000055555561684c in tb_gen_code (cpu=0x555557a65a60, pc=274886463488, cs_base=0, flags=4243635, cflags=-16777216) at /opt/qemu/trunk/src/qemu-4.0.0/accel/tcg/translate-all.c:1751
+
