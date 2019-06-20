@@ -100,8 +100,8 @@ The bugs were reported and fixed in version 9.0.2.
 
 the following CVE IDs were assigned for the vulnerabilities:
 
-memcpy_rce.bt: CVE-2019-12551
-null_deref.bt: CVE-2019-12552
-strcat_heap_overflow.bt: CVE-2019-12553
-SubStr.bt: CVE-2019-12555
+memcpy_rce.bt: CVE-2019-12551  
+null_deref.bt: CVE-2019-12552  
+strcat_heap_overflow.bt: CVE-2019-12553  
+SubStr.bt: CVE-2019-12555  
 WSubStr.bt: CVE-2019-12554
